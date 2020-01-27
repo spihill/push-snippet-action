@@ -1,3 +1,3 @@
-#!bin/ash
+#!/bin/ash
 
 echo `ls -l`
