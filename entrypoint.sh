@@ -1,4 +1,4 @@
 #!/bin/ash
 
-files=`pwd`
+files='hello'
 echo "::set-output name=files::${files}"
