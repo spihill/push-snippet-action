@@ -1,3 +1,3 @@
 #!/bin/ash
 
-echo `ls -l`
+echo ::set-output name=files::`ls -l`

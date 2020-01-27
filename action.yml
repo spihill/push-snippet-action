@@ -1,6 +1,9 @@
 # action.yml
 name: 'Hello World'
 description: 'test'
+outputs:
+  files:
+    description: 'ls'
 runs:
   using: 'docker'
   image: 'Dockerfile'
