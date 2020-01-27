@@ -1,4 +1,4 @@
 #!/bin/ash
 
-files='hello'
+echo 'Hello, World'
 echo "::set-output name=files::file"
