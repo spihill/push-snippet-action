@@ -11,6 +11,12 @@ inputs:
   GITHUB_TOKEN:
     description: 'your github repository token'
     required: true
+  SNIPPET_GIST_ID:
+    description: 'your snippet gist id'
+    required: true
+  SNIPPET_GIST_TOKEN:
+    description: 'your snippet gist token'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -18,3 +24,5 @@ runs:
     - ${{ inputs.YOUR_GITHUB_USER_NAME }}
     - ${{ inputs.YOUR_GITHUB_REPOSITORY }}
     - ${{ inputs.GITHUB_TOKEN }}
+    - ${{ inputs.SNIPPET_GIST_ID }}
+    - ${{ inputs.SNIPPET_GIST_TOKEN }}
