@@ -2,8 +2,8 @@
 FROM python:3.8.1-alpine3.11
 
 # アクションのリポジトリからコードファイルをファイルシステムパスへコピー
-COPY entrypoint.sh /entrypoint.sh
 RUN ls
+COPY entrypoint.sh /entrypoint.sh
 
 # dockerコンテナが起動する際に実行されるコードファイル (`entrypoint.sh`)
 ENTRYPOINT ["/bin/ash", "/entrypoint.sh"]
