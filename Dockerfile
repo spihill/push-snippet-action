@@ -2,7 +2,7 @@
 FROM python:3.8.1-alpine3.11
 
 # アクションのリポジトリからコードファイルをファイルシステムパスへコピー
-RUN ls
+RUN apk update && apk add git
 COPY entrypoint.sh /entrypoint.sh
 
 # dockerコンテナが起動する際に実行されるコードファイル (`entrypoint.sh`)
