@@ -5,6 +5,7 @@
 # $3: github_token
 # $4: snippet_gist_id
 # $5: snippet_gist_token
+# $6: snippet_file_name
 
 git config --global user.name "push-snippet-action"
 git config --global user.email "push-snippet-action"
@@ -16,8 +17,8 @@ cp /resolve_includes.py ${2}
 
 cd ${2} && python3 make_cpp_json.py && cd ..
 
-git clone https://spihill:${5}@gist.github.com/spihill/${4} && rm ./${4} -f
+git clone https://spihill:${5}@gist.github.com/spihill/${4} && rm ./${4}/${6} -f
 
-mv ./${2}/cpp.json ./${4} && cd ./${4}
-git add cpp.json
+mv ./${2}/${6} ./${4} && cd ./${4}
+git add ${6}
 git commit -m "updated by push-snippet-action" && git push origin HEAD || echo "NOT changed"
