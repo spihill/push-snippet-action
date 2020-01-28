@@ -1,9 +1,4 @@
 #!/bin/ash
 
-echo 'Hello, World'
-echo  $GITHUB_REPOSITORY
-echo  $GITHUB_REPOSITORY
-echo  $GITHUB_REPOSITORY
-ls -l
-pwd
-echo "::set-output name=files::file"
+git clone https://github.com/spihill/library.git
+echo "::set-output name=files::files"
