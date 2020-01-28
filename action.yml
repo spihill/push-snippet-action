@@ -1,9 +1,16 @@
 # action.yml
 name: 'Hello World'
 description: 'test'
-outputs:
-  files:
-    description: 'ls'
+inputs:
+  YOUR_GITHUB_USER_NAME:
+    description: 'your github user name'
+    required: true
+  YOUR_GITHUB_REPOSITORY:
+    description: 'your github repository'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.YOUR_GITHUB_USER_NAME }}
+    - ${{ inputs.YOUR_GITHUB_REPOSITORY }}

@@ -1,4 +1,3 @@
 #!/bin/ash
 
-git clone https://github.com/spihill/library.git
-echo "::set-output name=files::files"
+git clone https://github.com/${YOUR_GITHUB_USER_NAME}/${YOUR_GITHUB_REPOSITORY}.git
