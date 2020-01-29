@@ -20,6 +20,10 @@ inputs:
   SNIPPET_FILE_NAME:
     description: 'your snippet file name'
     required: true
+  SNIPPET_IGNORE_FILE_PATH:
+    description: 'specify file paths to ignore'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -30,3 +34,4 @@ runs:
     - ${{ inputs.SNIPPET_GIST_ID }}
     - ${{ inputs.SNIPPET_GIST_TOKEN }}
     - ${{ inputs.SNIPPET_FILE_NAME }}
+    - ${{ inputs.SNIPPET_IGNORE_FILE_PATH }}

@@ -4,11 +4,15 @@ import glob
 import json
 import codecs
 import resolve_includes
+import sys
 
 def file_list():
-	ng_words = ['verify/', '.test.cpp','test/','develop/', 'for_include/']
+	args = sys.argv
+	ng_words = []
+	if len(args[1]) != 0:
+		ng_words = args[1].split(':')
 	result = []
-	files = glob.glob("../../**/*.cpp", recursive=True)
+	files = glob.glob("**/*.cpp", recursive=True)
 	for file in files:
 		ok = 1
 		for words in ng_words:
@@ -16,7 +20,6 @@ def file_list():
 				ok = 0
 		if ok == 1:
 			result.append(file)
-		ok = 1
 	return result
 
 def make_cpp_json(target):
