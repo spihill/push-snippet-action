@@ -13,8 +13,8 @@ git config --global user.email "push-snippet-action"
 
 git clone https://${1}:${3}@github.com/${1}/${2}.git
 
-cp /make_cpp_json.py ${2}
-cp /resolve_includes.py ${2}
+cp /src/make_cpp_json.py ${2}
+cp /src/resolve_includes.py ${2}
 
 cd ${2} && python3 make_cpp_json.py ${7} && cd ..
 
